@@ -1,0 +1,179 @@
+/* Apply Roboto Mono font */
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('/public/fonts/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace; /* Use Roboto Mono */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Fixed header styling */
+  header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #003300; /* Dark green for header */
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  h3.breadcrumb {
+    position: fixed; /* Fix it to the top of the viewport */
+    top: 90px; /* Place it just below the header */
+    left: 40px; /* Align it to the left */
+    font-size: 19px; /* Set font size */
+    color: #fcfcfc; /* Text color */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    z-index: 100; /* Ensure it stays on top */
+    font-weight: 80; /* Set font weight */
+    font-family: 'RobotoMono'; /* Use RobotoMono font */
+    white-space: nowrap; /* Prevent wrapping */
+    display: inline; /* Ensures it's treated like inline text */
+    background: transparent; /* No background color */
+    width: auto; /* Let the text take only as much width as necessary */
+  }
+  
+  /* Style for the bold and highlighted text */
+  h3.breadcrumb .highlight {
+    font-weight: bold; /* Make the highlighted part bold */
+    color: #fcfcfc; /* Set the color for the highlighted part */
+    font-size: 20px; /* Slightly larger font size */
+  }
+
+
+  .line-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Adjust spacing as per your requirement */
+    margin-left: 20px;
+    top: -30px;  /* Align it with the left side of the page */
+  }
+  
+  .line {
+    height: 2px;
+    width: 100%; /* The line should stretch across the page */
+    background-color: red;
+    position: relative;
+  }
+  
+  .line::after {
+    content: "";
+    position: absolute;
+    right: -10px; /* Moves the circle to the end of the line */
+    top: -5px; /* Adjusts vertical position of the circle */
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  
+  .estimate-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    margin-left: 10px;
+    top: -30px;
+  }
+  /* Result container styling */
+  .result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    padding-top: 80px; /* Padding to account for the fixed header */
+    background: linear-gradient(to right, #1a1a1a, #004d00); /* Dark green gradient */
+    box-sizing: border-box;
+    position: relative; /* Ensures it covers the full page */
+  }
+  
+  /* Left content (flex item) */
+  .result-content {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .result-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Circular progress styling */
+  .circular-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .progress-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#4caf50 0% 64%, #cccccc 64% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .percentage {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .circular-progress p {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+  /* Right-side image styling */
+  .result-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .result-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .result-container {
+      flex-direction: column;
+      padding-top: 120px; /* More padding on top for mobile devices */
+    }
+  
+    .result-content, .result-image {
+      width: 100%;
+    }
+  
+    .progress-circle {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .percentage {
+      font-size: 1.2rem;
+    }
+  }
+  
